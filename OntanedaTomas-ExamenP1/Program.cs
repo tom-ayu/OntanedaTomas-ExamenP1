@@ -1,4 +1,8 @@
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddDbContext<TOntanedaContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("TOntanedaContext") ?? throw new InvalidOperationException("Connection string 'TOntanedaContext' not found.")));
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();

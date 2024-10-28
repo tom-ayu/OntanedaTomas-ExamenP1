@@ -14,7 +14,7 @@ namespace OntanedaTomas_ExamenP1.Models
         [Required]
         public bool EstaOverclokeado { get; set; }
         public DateOnly FechaObtencion { get; set; }
-        public Celular Celular { get; set; }
+        public Celular? Celular { get; set; }
         [ForeignKey("Celular")]
         public int IdCelular {  get; set; }
 
